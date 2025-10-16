@@ -10,7 +10,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class Checking implements Account {
+@Document(collection = "checking")
+public  class Checking implements Account {
 private String accountHolder;
 private double balance;
 private double insufficientFundFee;
@@ -35,6 +36,20 @@ this.balance -= amount;
 @Override
 public void updateBalance(double newBalance) {
 this.balance = newBalance;
+}
+
+
+@Override
+public String getAccountHolder() {
+	 return this.accountHolder= accountHolder;
+	 
+}
+
+
+@Override
+public double getBalance() {
+	
+	return this.balance = balance;
 }
 
 

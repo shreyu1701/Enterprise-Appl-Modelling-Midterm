@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "Savings")
-public abstract class Savings implements Account {
+@Document(collection = "savings")
+public  class Savings implements Account {
 	private String accountHolder;
 	private double balance;
 	private double interestRate;
@@ -37,4 +37,14 @@ public abstract class Savings implements Account {
     public void depositMonthlyInterest() {
         this.balance += this.balance * (interestRate / 100.0);
     }
+
+	@Override
+	public String getAccountHolder() {
+		return this.accountHolder = accountHolder;
+	}
+
+	@Override
+	public double getBalance() {
+		return this.balance= balance;
+	}
 }
